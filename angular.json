@@ -30,7 +30,11 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/p5/lib/p5.min.js",
+              "node_modules/p5/lib/addons/p5.sound.js",
+              "node_modules/ml5/dist/ml5.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,7 +98,9 @@
             "styles": [
               "src/styles.less"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/p5/lib/p5.js"
+            ]
           }
         },
         "lint": {
