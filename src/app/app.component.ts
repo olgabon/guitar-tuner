@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: []
 })
 export class AppComponent {
-  title = 'guitar-tuner';
+  title = 'Guitar Tuner';
 }

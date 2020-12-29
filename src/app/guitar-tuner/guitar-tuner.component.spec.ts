@@ -1,12 +1,16 @@
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/unbound-method */
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { GuitarTunerComponent } from './guitar-tuner.component';
 
 describe('GuitarTunerComponent', () => {
   let component: GuitarTunerComponent;
   let fixture: ComponentFixture<GuitarTunerComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    void TestBed.configureTestingModule({
       declarations: [ GuitarTunerComponent ]
     })
     .compileComponents();
@@ -19,25 +23,26 @@ describe('GuitarTunerComponent', () => {
   });
 
   it('should create guitar-tuner component', () => {
-    expect(component).toBeTruthy();
+    void expect(component).toBeTruthy();
   });
 
   it('should be falsy onCanvasHidden', fakeAsync(() => {
-    expect(component.onCanvasHidden).toBeFalsy();
+    void expect(component.onCanvasHidden).toBeFalsy();
   }));
 
   it('should call createCanvas method on start button click', fakeAsync(() => {
     spyOn(component, 'createCanvas');
-    let button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
     tick();
-    expect(component.createCanvas).toHaveBeenCalled();
+    void expect(component.createCanvas).toHaveBeenCalled();
   }));
 
   it('should be truthy onCanvasHidden after createCanvas was called', fakeAsync(() => {
-    let button = fixture.debugElement.nativeElement.querySelector('button');
+    const button = fixture.debugElement.nativeElement.querySelector('button');
     button.click();
     tick();
-    expect(component.onCanvasHidden).toBeTruthy();
+    void expect(component.onCanvasHidden).toBeTruthy();
   }));
-})
+
+});

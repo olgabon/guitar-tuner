@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { Component } from '@angular/core';
 declare let p5: any;
 declare let ml5: any;
 
@@ -7,11 +11,8 @@ declare let ml5: any;
   templateUrl: './guitar-tuner.component.html',
   styleUrls: ['./guitar-tuner.component.less']
 })
-export class GuitarTunerComponent implements OnInit {
+export class GuitarTunerComponent {
   onCanvasHidden = false;
-  constructor() { }
-
-  ngOnInit(): void {}
   createCanvas() {
     this.onCanvasHidden = true;
     new p5(this.sketch);
