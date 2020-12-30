@@ -1,6 +1,6 @@
 # Guitar Tuner
 
-Guiter Tuner is an application which allows to detect note pitch for tuning an acoustic guitar.
+Guiter Tuner is an application which allows to detect note pitch for tuning an acoustic guitar. Deployed version can be found here `https://olgabon.github.io/guitar-tuner/`
 
 ## Introduction
 
