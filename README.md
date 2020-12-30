@@ -4,7 +4,7 @@ Guiter Tuner is an application which allows to detect note pitch for tuning an a
 
 ## Introduction
 
-Guitar Tuner was created in Angular where were used 2 libraries: p5.js `https://p5js.org/` for listening to the microphone and creating the canvas as well as ml5.js `https://ml5js.org/` for detecting note pitch while using machine learning algorithms.
+Guitar Tuner is created in Angular where are used 2 libraries: p5.js `https://p5js.org/` for listening to the microphone and creating the canvas as well as ml5.js `https://ml5js.org/` for detecting note pitch while using machine learning algorithms.
 
 ## Further Steps
 
@@ -12,7 +12,7 @@ Improve UI and add mobile version.
 
 ## Development server
 
-Run `npm install` and then run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` and then run `npm start` or `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
