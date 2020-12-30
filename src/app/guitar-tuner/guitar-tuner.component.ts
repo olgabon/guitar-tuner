@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-'use strict';
 import { Component } from '@angular/core';
 declare const p5;
 declare const ml5;
@@ -11,6 +10,7 @@ declare const ml5;
   styleUrls: ['./guitar-tuner.component.less']
 })
 export class GuitarTunerComponent {
+  p5
   onCanvasHidden = false;
   createCanvas() {
     this.onCanvasHidden = true;
