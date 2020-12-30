@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+'use strict';
 import { Component } from '@angular/core';
-declare let p5: any;
-declare let ml5: any;
+declare const p5;
+declare const ml5;
 
 @Component({
   selector: 'app-guitar-tuner',
@@ -15,9 +14,9 @@ export class GuitarTunerComponent {
   onCanvasHidden = false;
   createCanvas() {
     this.onCanvasHidden = true;
-    new p5(this.sketch);
+    new p5((p) => this.sketch(p));
   }
-  private sketch(p: any) {
+  private sketch(p) {
     let freq = 0;
     const notes = [
       { note: 'E', freq: 82.41 },
@@ -31,11 +30,13 @@ export class GuitarTunerComponent {
       p.createCanvas(350, 350);
       const modelUrl = 'https://cdn.jsdelivr.net/gh/ml5js/ml5-data-and-models/models/pitch-detection/crepe/';
       const audioContext = new AudioContext();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const mic = new p5.AudioIn();
       let pitch;
       mic.start(loadModel);
 
       function loadModel() {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         pitch = ml5.pitchDetection(modelUrl, audioContext, mic.stream, modelLoaded);
       }
 
@@ -43,7 +44,7 @@ export class GuitarTunerComponent {
         pitch.getPitch(gotPitch);
       }
 
-      function gotPitch(error, frequency) {
+      function gotPitch(error: string, frequency: number) {
         if (error) {
           console.error(error);
         }
@@ -55,7 +56,7 @@ export class GuitarTunerComponent {
     };
 
     p.draw = () => {
-      let noteDetected = null;
+      let noteDetected;
       let toneDiff = Infinity;
       notes.forEach(note => {
         const diff = freq - note.freq;
